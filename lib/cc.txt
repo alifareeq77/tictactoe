@@ -1,0 +1,41 @@
+Stack(
+          children: [
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _btnVal = "O";
+                  _color = Colors.lightBlue;
+                  _mainAlign = MainAxisAlignment.end;
+                });
+              },
+              child: Container(
+                width: 120,
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    border:
+                        Border.all(width: 2, color: const Color(0xffcccccc))),
+                child: Row(
+                  mainAxisAlignment: _mainAlign,
+                  children: [
+                    AnimatedContainer(
+                      duration: const Duration(seconds: 2),
+                      height: 120,
+                      width: 60,
+                      decoration: BoxDecoration(
+                          color: _color,
+                          border: Border.all(
+                              width: 2, color: const Color(0xffcccccc)),
+                          borderRadius: BorderRadius.circular(50)),
+                      child: Center(
+                        child: Text(_btnVal,
+                            style: GoogleFonts.balooTammudu(
+                                color: Colors.white, fontSize: 25)),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        )
